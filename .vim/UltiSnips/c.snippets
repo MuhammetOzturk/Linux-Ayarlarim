@@ -1,0 +1,311 @@
+snippet freertos "include freertos" b
+#include <freertos/FreeRTOS.h>
+#include <freertos/task.h>
+endsnippet
+
+snippet nvs "nvs.h" b
+#include <nvs_flash.h>
+#include <nvs.h>
+endsnippet
+
+snippet queue "freertos/queue.h" b
+#include <freertos/queue.h>
+endsnippet
+
+snippet esp_wifi "esp_wifi.h" b
+#include <esp_wifi.h>
+endsnippet
+
+snippet nvs_flash_init "nvs_init" b
+nvs_flash_init();
+endsnippet
+
+                    
+                    
+snippet esp_wifi_init "esp_err_t esp_wifi_init(const wifi_init_config_t *config);" b 
+esp_wifi_init($1);
+endsnippet                    
+                    
+snippet esp_wifi_deinit "esp_err_t esp_wifi_deinit(void);" b 
+esp_wifi_deinit();
+endsnippet                    
+                    
+snippet esp_wifi_set_mode "esp_err_t esp_wifi_set_mode(wifi_mode_t mode);" b 
+esp_wifi_set_mode($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_mode "esp_err_t esp_wifi_get_mode(wifi_mode_t *mode);" b 
+esp_wifi_get_mode($1);
+endsnippet                    
+                    
+snippet esp_wifi_start "esp_err_t esp_wifi_start(void);" b 
+esp_wifi_start();
+endsnippet                    
+                    
+snippet esp_wifi_stop "esp_err_t esp_wifi_stop(void);" b 
+esp_wifi_stop();
+endsnippet                    
+                    
+snippet esp_wifi_restore "esp_err_t esp_wifi_restore(void);" b 
+esp_wifi_restore();
+endsnippet                    
+                    
+snippet esp_wifi_connect "esp_err_t esp_wifi_connect(void);" b 
+esp_wifi_connect();
+endsnippet                    
+                    
+snippet esp_wifi_disconnect "esp_err_t esp_wifi_disconnect(void);" b 
+esp_wifi_disconnect();
+endsnippet                    
+                    
+snippet esp_wifi_clear_fast_connect "esp_err_t esp_wifi_clear_fast_connect(void);" b 
+esp_wifi_clear_fast_connect();
+endsnippet                    
+                    
+snippet esp_wifi_deauth_sta "esp_err_t esp_wifi_deauth_sta(uint16_t aid);" b 
+esp_wifi_deauth_sta($1);
+endsnippet                    
+                    
+snippet esp_wifi_scan_start "esp_err_t esp_wifi_scan_start(const wifi_scan_config_t *config, bool block);" b 
+esp_wifi_scan_start($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_scan_stop "esp_err_t esp_wifi_scan_stop(void);" b 
+esp_wifi_scan_stop();
+endsnippet                    
+                    
+snippet esp_wifi_scan_get_ap_num "esp_err_t esp_wifi_scan_get_ap_num(uint16_t *number);" b 
+esp_wifi_scan_get_ap_num($1);
+endsnippet                    
+                    
+snippet esp_wifi_scan_get_ap_records "esp_err_t esp_wifi_scan_get_ap_records(uint16_t *number, wifi_ap_record_t *ap_records);" b 
+esp_wifi_scan_get_ap_records($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_clear_ap_list "esp_err_t esp_wifi_clear_ap_list(void);" b 
+esp_wifi_clear_ap_list();
+endsnippet                    
+                    
+snippet esp_wifi_sta_get_ap_info "esp_err_t esp_wifi_sta_get_ap_info(wifi_ap_record_t *ap_info);" b 
+esp_wifi_sta_get_ap_info($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_ps "esp_err_t esp_wifi_set_ps(wifi_ps_type_t type);" b 
+esp_wifi_set_ps($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_ps "esp_err_t esp_wifi_get_ps(wifi_ps_type_t *type);" b 
+esp_wifi_get_ps($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_protocol "esp_err_t esp_wifi_set_protocol(wifi_interface_t ifx, uint8_t protocol_bitmap);" b 
+esp_wifi_set_protocol($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_protocol "esp_err_t esp_wifi_get_protocol(wifi_interface_t ifx, uint8_t *protocol_bitmap);" b 
+esp_wifi_get_protocol($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_bandwidth "esp_err_t esp_wifi_set_bandwidth(wifi_interface_t ifx, wifi_bandwidth_t bw);" b 
+esp_wifi_set_bandwidth($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_bandwidth "esp_err_t esp_wifi_get_bandwidth(wifi_interface_t ifx, wifi_bandwidth_t *bw);" b 
+esp_wifi_get_bandwidth($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_channel "esp_err_t esp_wifi_set_channel(uint8_t primary, wifi_second_chan_t second);" b 
+esp_wifi_set_channel($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_channel "esp_err_t esp_wifi_get_channel(uint8_t *primary, wifi_second_chan_t *second);" b 
+esp_wifi_get_channel($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_country "esp_err_t esp_wifi_set_country(const wifi_country_t *country);" b 
+esp_wifi_set_country($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_country "esp_err_t esp_wifi_get_country(wifi_country_t *country);" b 
+esp_wifi_get_country($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_mac "esp_err_t esp_wifi_set_mac(wifi_interface_t ifx, const uint8_t mac[6]);" b 
+esp_wifi_set_mac($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_mac "esp_err_t esp_wifi_get_mac(wifi_interface_t ifx, uint8_t mac[6]);" b 
+esp_wifi_get_mac($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_promiscuous_rx_cb "esp_err_t esp_wifi_set_promiscuous_rx_cb(wifi_promiscuous_cb_t cb);" b 
+esp_wifi_set_promiscuous_rx_cb($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_promiscuous "esp_err_t esp_wifi_set_promiscuous(bool en);" b 
+esp_wifi_set_promiscuous($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_promiscuous "esp_err_t esp_wifi_get_promiscuous(bool *en);" b 
+esp_wifi_get_promiscuous($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_promiscuous_filter "esp_err_t esp_wifi_set_promiscuous_filter(const wifi_promiscuous_filter_t *filter);" b 
+esp_wifi_set_promiscuous_filter($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_promiscuous_filter "esp_err_t esp_wifi_get_promiscuous_filter(wifi_promiscuous_filter_t *filter);" b 
+esp_wifi_get_promiscuous_filter($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_promiscuous_ctrl_filter "esp_err_t esp_wifi_set_promiscuous_ctrl_filter(const wifi_promiscuous_filter_t *filter);" b 
+esp_wifi_set_promiscuous_ctrl_filter($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_promiscuous_ctrl_filter "esp_err_t esp_wifi_get_promiscuous_ctrl_filter(wifi_promiscuous_filter_t *filter);" b 
+esp_wifi_get_promiscuous_ctrl_filter($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_config "esp_err_t esp_wifi_set_config(wifi_interface_t interface, wifi_config_t *conf);" b 
+esp_wifi_set_config($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_config "esp_err_t esp_wifi_get_config(wifi_interface_t interface, wifi_config_t *conf);" b 
+esp_wifi_get_config($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_ap_get_sta_list "esp_err_t esp_wifi_ap_get_sta_list(wifi_sta_list_t *sta);" b 
+esp_wifi_ap_get_sta_list($1);
+endsnippet                    
+                    
+snippet esp_wifi_ap_get_sta_aid "esp_err_t esp_wifi_ap_get_sta_aid(const uint8_t mac[6], uint16_t *aid);" b 
+esp_wifi_ap_get_sta_aid($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_storage "esp_err_t esp_wifi_set_storage(wifi_storage_t storage);" b 
+esp_wifi_set_storage($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_vendor_ie "esp_err_t esp_wifi_set_vendor_ie(bool enable, wifi_vendor_ie_type_t type, wifi_vendor_ie_id_t idx, const void *vnd_ie);" b 
+esp_wifi_set_vendor_ie($1, $2, $3, $4);
+endsnippet                    
+                    
+snippet esp_wifi_set_vendor_ie_cb "esp_err_t esp_wifi_set_vendor_ie_cb(esp_vendor_ie_cb_t cb, void *ctx);" b 
+esp_wifi_set_vendor_ie_cb($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_max_tx_power "esp_err_t esp_wifi_set_max_tx_power(int8_t power);" b 
+esp_wifi_set_max_tx_power($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_max_tx_power "esp_err_t esp_wifi_get_max_tx_power(int8_t *power);" b 
+esp_wifi_get_max_tx_power($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_event_mask "esp_err_t esp_wifi_set_event_mask(uint32_t mask);" b 
+esp_wifi_set_event_mask($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_event_mask "esp_err_t esp_wifi_get_event_mask(uint32_t *mask);" b 
+esp_wifi_get_event_mask($1);
+endsnippet                    
+                    
+snippet esp_wifi_80211_tx "esp_err_t esp_wifi_80211_tx(wifi_interface_t ifx, const void *buffer, int len, bool en_sys_seq);" b 
+esp_wifi_80211_tx($1, $2, $3, $4);
+endsnippet                    
+                    
+snippet esp_wifi_set_csi_rx_cb "esp_err_t esp_wifi_set_csi_rx_cb(wifi_csi_cb_t cb, void *ctx);" b 
+esp_wifi_set_csi_rx_cb($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_csi_config "esp_err_t esp_wifi_set_csi_config(const wifi_csi_config_t *config);" b 
+esp_wifi_set_csi_config($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_csi "esp_err_t esp_wifi_set_csi(bool en);" b 
+esp_wifi_set_csi($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_ant_gpio "esp_err_t esp_wifi_set_ant_gpio(const wifi_ant_gpio_config_t *config);" b 
+esp_wifi_set_ant_gpio($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_ant_gpio "esp_err_t esp_wifi_get_ant_gpio(wifi_ant_gpio_config_t *config);" b 
+esp_wifi_get_ant_gpio($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_ant "esp_err_t esp_wifi_set_ant(const wifi_ant_config_t *config);" b 
+esp_wifi_set_ant($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_ant "esp_err_t esp_wifi_get_ant(wifi_ant_config_t *config);" b 
+esp_wifi_get_ant($1);
+endsnippet                    
+                    
+snippet esp_wifi_get_tsf_time "int64_t esp_wifi_get_tsf_time(wifi_interface_t interface);" b 
+esp_wifi_get_tsf_time($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_inactive_time "esp_err_t esp_wifi_set_inactive_time(wifi_interface_t ifx, uint16_t sec);" b 
+esp_wifi_set_inactive_time($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_inactive_time "esp_err_t esp_wifi_get_inactive_time(wifi_interface_t ifx, uint16_t *sec);" b 
+esp_wifi_get_inactive_time($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_statis_dump "esp_err_t esp_wifi_statis_dump(uint32_t modules);" b 
+esp_wifi_statis_dump($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_rssi_threshold "esp_err_t esp_wifi_set_rssi_threshold(int32_t rssi);" b 
+esp_wifi_set_rssi_threshold($1);
+endsnippet                    
+                    
+snippet esp_wifi_ftm_initiate_session "esp_err_t esp_wifi_ftm_initiate_session(wifi_ftm_initiator_cfg_t *cfg);" b 
+esp_wifi_ftm_initiate_session($1);
+endsnippet                    
+                    
+snippet esp_wifi_ftm_end_session "esp_err_t esp_wifi_ftm_end_session(void);" b 
+esp_wifi_ftm_end_session();
+endsnippet                    
+                    
+snippet esp_wifi_ftm_resp_set_offset "esp_err_t esp_wifi_ftm_resp_set_offset(int16_t offset_cm);" b 
+esp_wifi_ftm_resp_set_offset($1);
+endsnippet                    
+                    
+snippet esp_wifi_config_11b_rate "esp_err_t esp_wifi_config_11b_rate(wifi_interface_t ifx, bool disable);" b 
+esp_wifi_config_11b_rate($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_set_connectionless_wake_interval "esp_err_t esp_wifi_set_connectionless_wake_interval(uint16_t interval);" b 
+esp_wifi_set_connectionless_wake_interval($1);
+endsnippet                    
+                    
+snippet esp_wifi_set_country_code "esp_err_t esp_wifi_set_country_code(const char *country, bool ieee80211d_enabled);" b 
+esp_wifi_set_country_code($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_get_country_code "esp_err_t esp_wifi_get_country_code(char *country);" b 
+esp_wifi_get_country_code($1);
+endsnippet                    
+                    
+snippet esp_wifi_config_80211_tx_rate "esp_err_t esp_wifi_config_80211_tx_rate(wifi_interface_t ifx, wifi_phy_rate_t rate);" b 
+esp_wifi_config_80211_tx_rate($1, $2);
+endsnippet                    
+                    
+snippet esp_wifi_disable_pmf_config "esp_err_t esp_wifi_disable_pmf_config(wifi_interface_t ifx);" b 
+esp_wifi_disable_pmf_config($1);
+endsnippet                    
+                    
+snippet esp_wifi_sta_get_aid "esp_err_t esp_wifi_sta_get_aid(uint16_t *aid);" b 
+esp_wifi_sta_get_aid($1);
+endsnippet                    
+                    
+snippet esp_wifi_sta_get_negotiated_phymode "esp_err_t esp_wifi_sta_get_negotiated_phymode(wifi_phy_mode_t *phymode);" b 
+esp_wifi_sta_get_negotiated_phymode($1);
+endsnippet                    
+                    
+snippet esp_wifi_sta_get_rssi "esp_err_t esp_wifi_sta_get_rssi(int *rssi);" b 
+esp_wifi_sta_get_rssi($1);
+endsnippet                    
