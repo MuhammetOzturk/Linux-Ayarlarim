@@ -1,4 +1,4 @@
-set encoding=utf-8
+
 "Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'quafzi/vim-flow-diagram'
@@ -308,3 +308,16 @@ endfunction
 command! Girintile call Girintile()
 nmap gr :Girintile<CR>
 
+
+function! DeleteWhitespaceBackward()
+    if col(".") > 1 && getline(".")[col(".") - 2] =~ "\\s"
+        normal! h
+        normal! v
+        while col(".") > 1 && getline(".")[col(".") - 2] =~ "\\s"
+            normal! h
+        endwhile
+        normal! x
+    endif
+endfunction
+
+nnoremap <silent> <leader>d :call DeleteWhitespaceBackward()<CR>
