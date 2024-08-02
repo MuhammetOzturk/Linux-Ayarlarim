@@ -1,4 +1,4 @@
-
+set encoding=utf-8
 "Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'quafzi/vim-flow-diagram'
