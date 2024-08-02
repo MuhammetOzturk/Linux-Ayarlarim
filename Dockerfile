@@ -9,7 +9,7 @@ RUN apt update                                                                  
     . venv/bin/activate                                                          && \
     pip install                                                                     \
     torch torchaudio torchvision scikit-learn                                       \
-    matplotlib notebook transformers opencv-python                                  \
+    matplotlib notebook transformers opencv-python PyQt5 "gymnasium[all]"           \
     requests_futures bottle waitress watchdog jedi                               && \
     curl  https://ollama.com/install.sh -o /tmp/ollama.sh && bash /tmp/ollama.sh && \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
@@ -22,15 +22,15 @@ VOLUME /tmp/.X11-unix/ /tmp/.X11-unix/
 
 ENV DISPLAY=:0
 
-COPY .vimrc /root/     
-COPY .vim   /root/     
-COPY .tmux.conf /root/ 
-COPY .tmux  /root/    
+COPY .vimrc /root/.vimrc
+COPY .vim   /root/.vim     
+COPY .tmux.conf /root/.tmux.conf 
+COPY .tmux  /root/.tmux
   
 
 EXPOSE 8888
 EXPOSE 8000
 
-CMD ["bash"]
+CMD ["zsh"]
 
 
