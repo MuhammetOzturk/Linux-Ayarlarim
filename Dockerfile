@@ -1,22 +1,36 @@
 FROM debian
 
 RUN apt update                                                                   && \
-    apt install curl vim vim-youcompleteme vim-addon-manager                        \
-    libgl-dev vim-snippets python3 python3-pip screen                               \
-    python3-venv git zsh x11-apps libopencv-dev -y                               && \
+    apt install -y  vim vim-youcompleteme vim-addon-manager vim-snippets            \ 
+    python3 python3-pip python3-venv libopencv-dev                                  \
+    git zsh x11-apps curl tmux                                                   && \
+                                                                                    \
     vam install youcompleteme                                                    && \
+                                                                                    \
     python3 -m venv venv                                                         && \
+                                                                                    \
     . venv/bin/activate                                                          && \
     pip install                                                                     \
-    torch torchaudio torchvision scikit-learn                                       \
-    matplotlib notebook transformers opencv-python PyQt5 "gymnasium[all]"           \
-    requests_futures bottle waitress watchdog jedi                               && \
-    curl  https://ollama.com/install.sh -o /tmp/ollama.sh && bash /tmp/ollama.sh && \
+                                                                                    \
+    #vim-youcomleteme icin gerekli paketler                                         \
+    requests_futures bottle waitress watchdog jedi                                  \
+                                                                                    \
+    #Derin ogrenme kutuphaneleri                                                    \
+    torch torchvision torchaudio                                                    \
+                                                                                    \
+    #Goruntu ve veri isleme kutuphaneleri                                           \
+    opencv-python matplotlib scikit-learn pandas notebook PyQt5                     \        
+                                                                                    \
+    #Pekistirmeli ogrenme kutuphaneleri                                             \
+    "gymnasium[all]" "stable-baselines3"                                         && \
+                                                                                    \
+    #oh-my-zsh kurulum                                                              \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 
 ENV PATH="/venv/bin:$PATH"
 RUN . /venv/bin/activate
 
+#X server uygulamalarini calistirmak icin gerekli
 VOLUME /tmp/.X11-unix/ /tmp/.X11-unix/
 
 
@@ -27,6 +41,7 @@ COPY .vim   /root/.vim
 COPY .tmux.conf /root/.tmux.conf 
 COPY .tmux  /root/.tmux
   
+RUN yes | vim -c PlugInstall -c qa
 
 EXPOSE 8888
 EXPOSE 8000
