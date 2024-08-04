@@ -1,8 +1,8 @@
 #!/bin/bash
 
-docker run                              \
- --rm                                   \
- -it --gpus=all                         \
- --net host                             \
- -v $HOME/.Xauthority:/root/.Xauthority \ 
+docker run                                \
+ --rm                                     \
+ -it --gpus=all                           \
+ --net host                               \
+ -v "$HOME/.Xauthority:/root/.Xauthority" \
  --privileged debian-work
