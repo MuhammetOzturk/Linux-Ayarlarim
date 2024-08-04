@@ -8,8 +8,18 @@ Eğer Linux'da çalışan biriyseniz işletim sisteminin her sıfırdan yüklenm
 
 ### Linux için Ön Hazırlık  
 Bilgisayarım NVIDIA ekran kartına sahip, bu yüzden Docker ortamında GPU'ları kullanabilmem için NVIDIA Container Toolkit aracının kurulumunu yapmam gerekiyor.
+Ama hepsinden önce linux için nvidia cuda çekirdeklerinin kurulu olması lazım. Ben pytorch için 12.1 versiyonunu kullanıyorum. Siz ihtiyacınıza bunun versıyonunu değiştirebilirsiniz.
+
 
 ---
+
+```bash
+wget https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/cuda-keyring_1.0-1_all.deb
+sudo dpkg -i cuda-keyring_1.0-1_all.deb
+sudo add-apt-repository contrib
+sudo apt-get update
+sudo apt-get -y install cuda
+```
 
 
 
