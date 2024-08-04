@@ -3,7 +3,7 @@ FROM debian
 RUN apt update                                                                   && \
     apt install -y  vim vim-youcompleteme vim-addon-manager vim-snippets            \ 
     python3 python3-pip python3-venv libopencv-dev                                  \
-    git zsh x11-apps curl tmux                                                   && \
+    git zsh x11-apps curl tmux screen                                            && \
                                                                                     \
     vam install youcompleteme                                                    && \
                                                                                     \
@@ -23,6 +23,9 @@ RUN apt update                                                                  
                                                                                     \
     #Pekistirmeli ogrenme kutuphaneleri                                             \
     "gymnasium[all]" "stable-baselines3"                                         && \
+                                                                                    \
+    #ollama kurulumu                                                                \
+    curl https://ollama.com/install.sh -o /tmp/ollama.sh && bash /tmp/ollama.sh  && \
                                                                                     \
     #oh-my-zsh kurulum                                                              \
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
