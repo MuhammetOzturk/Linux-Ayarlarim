@@ -14,6 +14,7 @@ Ama hepsinden önce linux için nvidia cuda çekirdeklerinin kurulu olması laz�
 ---
 
 ```bash
+#Host isletim sistemini nvidia cuda cekirdekleri kurulur.
 wget https://developer.download.nvidia.com/compute/cuda/repos/debian11/x86_64/cuda-keyring_1.0-1_all.deb
 sudo dpkg -i cuda-keyring_1.0-1_all.deb
 sudo add-apt-repository contrib
@@ -24,6 +25,7 @@ sudo apt-get -y install cuda
 
 
 ```bash 
+#Nvidia Container Toolkit repo anahtarlari ve repo'su eklenir.
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \
   && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
     sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
